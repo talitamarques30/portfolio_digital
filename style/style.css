@@ -1,0 +1,162 @@
+/* Reset e fonte base */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background-image: url('/images/tyler-lastovich-yz3Lt5Kwdi8-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.flex-container > button {
+    padding: 8px 16px;
+    background-color: #cccccc;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.flex-container > button:hover {
+    background-color: #aaaaaa;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 160px auto 60px;
+    grid-template-areas:
+        "nav header"
+        "nav main"
+        "nav footer";
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.grid > nav {
+    grid-area: nav;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 32px 16px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.grid > nav a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    transition: background-color 0.3s;
+}
+
+.grid > nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.grid > header {
+    grid-area: header;
+    padding: 16px 32px;
+    text-align: left;
+}
+
+.grid > header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.grid > header p {
+    font-size: 17.6px;
+    color: #dddddd;
+}
+
+.grid > main, .grid > section {
+    grid-area: main;
+    padding: 32px;
+    text-align: center;
+}
+
+.grid > main p, .grid > section p {
+    max-width: 700px;
+    margin: 0 auto 24px auto;
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+.grid > section article{
+    margin-bottom: 32px;
+}
+/*
+.grid > article p{
+
+}
+*/
+.grid > footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 16px;
+    font-size: 14.4px;
+    color: #cccccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+        height: auto;
+    }
+
+    .grid > nav {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        overflow-x: auto;
+    }
+
+    .grid > nav a {
+        margin: 0 8px;
+        white-space: nowrap;
+    }
+
+    .grid > main, .grid > section {
+        padding: 24px 16px;
+    }
+
+    .grid > header {
+        padding: 16px;
+        text-align: center;
+    }
+
+    .grid > main p, .grid > section p {
+        max-width: 100%;
+    }
+}
