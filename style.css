@@ -12,7 +12,7 @@ html, body {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-image: url('/portfolio_digital/src/images/tyler-lastovich-yz3Lt5Kwdi8-unsplash.jpg');
+    background-image: url('src/images/tyler-lastovich-yz3Lt5Kwdi8-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
