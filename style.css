@@ -9,10 +9,12 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
-body {
+html, body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: 'Poppins', sans-serif;
-    background-image: url('/src/images/tyler-lastovich-yz3Lt5Kwdi8-unsplash.jpg');
+    background-image: url('src/images/tyler-lastovich-yz3Lt5Kwdi8-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -21,13 +23,15 @@ body {
     line-height: 1.6;
     font-size: 15px;
 }
-
 .flex-container {
     display: flex;
     justify-content: flex-end;
     padding: 8px 20px;
     background-color: rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    gap: 20px;
 }
+
 
 .flex-container > button {
     padding: 8px 16px;
@@ -52,9 +56,10 @@ body {
         "nav header"
         "nav main"
         "nav footer";
-    min-height: calc(100vh - 50px);
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
+    flex: 1;
+    overflow-y: auto;
 }
 
 .grid > nav {
@@ -217,7 +222,7 @@ body {
     padding: 16px 48px;
     max-width: 900px;
     margin: 0 auto;
-    margin-top: -20px; /* Ajuste para mover a section para cima */
+    margin-top: -20px;
 }
 
 .grid > section article {
@@ -255,6 +260,7 @@ footer {
     padding: 10px;
     color: #cccccc;
     font-size: 14px;
+    flex-shrink: 0;
 }
 
 .voltar-container {
@@ -278,7 +284,7 @@ footer {
     background-color: #bbb;
 }
 
-/* Responsividade*/
+/* Responsividade */
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
